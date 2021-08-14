@@ -2,23 +2,51 @@
     color: green,
 } */
 
-li {
-  color: red
+
+/*with a grid*/
+nav{
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  /* grid-auto-rows: minmax(10px, auto); */
 }
 
-li.menu-option {
-  background-color: gray;
-  padding: 5px;
-  margin-top: 50px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  width: 25%;
-  height: 30%;
-  float: left;
+nav > div {
+  color: red;
+  /* grid-column: 1;
+  grid-row: 1; */
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* flex-flow: row wrap; */
+}
+
+nav > div {
+  color: red;
+  flex-grow: 1;
+  /* grid-column: 1;
+  grid-row: 1; */
+}
+
+nav > div, div.press-over-view, div.press-selected {
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
 }
 
 div.press {
-  width: 100%;
-  display: block;
+  display: flex;
+  
 }
+div.press-over-view {
+  padding: 10%;
+}
+div.press-selected {
+  padding: 30%;
+}
+
+
+

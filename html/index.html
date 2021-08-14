@@ -6,33 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>prueba</title>
-  <link rel="stylesheet" href="../style.css">
   <style>
     div.press-over-view {
       color: green;
     }
+    nav{
+      display: grid;
+      grid-template-columns: repeat(4, 200px);
+      /* grid-auto-rows: minmax(10px, auto); */
+    }
+
+    nav > div {
+      color: red;
+      /* grid-column: 1;
+      grid-row: 1; */
+    }
   </style>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
 <div id="web-app">
   <nav>
-    <ul>
-      <li id="one" class="menu-option" data-selected="true" >about</li>
-      <li class="menu-option">stats</li>
-      <li class="menu-option">games</li>
-    </ul>
+    <div id="one" class="menu-option" data-selected="true">about</div>
+    <div class="menu-option">stats</div>
+    <div class="menu-option">games</div>
+    <!-- <div class="menu-option">four</div> -->
+
   </nav>
 
   <div class="container press">
     <div class="container press-over-view">
-      <ul>
-        <li class="press-overview"> <div class="press-over-view">press one</div>  </li>
-        <li class="press-overview" style="color: hotpink;">press two</li>
-        <li class="press-overview">press three</li>
-      </ul>
+      <div class="press-overview"><div class="selected">press one</div></div>
+      <div class="press-overview" style="color: hotpink;">press two</div>
+      <div class="press-overview">press three</div>
     </div>
-    <div class="container press-selected" >press two</div>
+    <div class="container press-selected" >selected press</div>
   </div>
 </div>
 </body>
