@@ -1,0 +1,24 @@
+/* div.container.press-over-view {
+    color: green,
+} */
+
+li {
+  color: red
+}
+
+li.menu-option {
+  background-color: gray;
+  padding: 5px;
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  width: 25%;
+  height: 30%;
+  float: left;
+}
+
+div.press {
+  width: 100%;
+  display: block;
+}

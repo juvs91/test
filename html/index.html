@@ -4,24 +4,37 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  
+  <title>prueba</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    div.press-over-view {
+      color: green;
+    }
+  </style>
 </head>
+<body>
 
-  <div>
-    inside my div
+<div id="web-app">
+  <nav>
+    <ul>
+      <li id="one" class="menu-option" data-selected="true" >about</li>
+      <li class="menu-option">stats</li>
+      <li class="menu-option">games</li>
+    </ul>
+  </nav>
+
+  <div class="container press">
+    <div class="container press-over-view">
+      <ul>
+        <li class="press-overview"> <div class="press-over-view">press one</div>  </li>
+        <li class="press-overview" style="color: hotpink;">press two</li>
+        <li class="press-overview">press three</li>
+      </ul>
+    </div>
+    <div class="container press-selected" >press two</div>
   </div>
-  <p>inside my p</p>
-  <div>div one</div>
-  <div>div two</div>
-  <form action="">
-    
-    <span class="name">nombre:</span> <input type="text" name="name" id="name-id"><br>
-    check one:<input type="checkbox" name="check-one" id="check-id"><br>
-    check two:<input type="checkbox" name="check-two" class="check-class"><br>
-    <input type="button" value="submit"><br>
-
-  </form>
-
+</div>
 </body>
 </html>
 
