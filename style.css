@@ -1,12 +1,11 @@
-/* div.container.press-over-view {
-    color: green,
-} */
+
 
 
 /*with a grid*/
 nav{
   display: grid;
-  grid-template-columns: repeat(4, 200px);
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 5px;
   /* grid-auto-rows: minmax(10px, auto); */
 }
 
@@ -21,6 +20,7 @@ nav{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 5px;
   /* flex-flow: row wrap; */
 }
 
@@ -31,21 +31,44 @@ nav > div {
   grid-row: 1; */
 }
 
-nav > div, div.press-over-view, div.press-selected {
+nav > div, div.all-press-overview, div.press-selected {
   border-width: 1px;
   border-style: solid;
   border-color: red;
 }
 
-div.press {
+section.press {
   display: flex;
   
 }
-div.press-over-view {
+div.all-press-overview {
   padding: 10%;
 }
 div.press-selected {
-  padding: 30%;
+  padding: 5%;
+}
+
+div.press-card {
+  width: 80px;
+  height: auto;
+}
+
+div.press-selected > div.press-card {
+  width: 450px;
+  height: auto;
+}
+
+div.press-card, div.header, div.footer {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+div.footer {
+  margin-top: auto;
 }
 
 

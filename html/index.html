@@ -7,20 +7,23 @@
   
   <title>prueba</title>
   <style>
-    div.press-over-view {
+    div.all-press-overview {
       color: green;
+      display: flex;
+      flex-direction: column;
     }
-    nav{
+    /* nav{
       display: grid;
-      grid-template-columns: repeat(4, 200px);
-      /* grid-auto-rows: minmax(10px, auto); */
-    }
+      grid-template-columns: repeat(auto-fit, 200px);
+      gap: 5px;
+      
+    } */
 
-    nav > div {
+    /* nav > div {
       color: red;
-      /* grid-column: 1;
-      grid-row: 1; */
-    }
+      grid-column: 1;
+      grid-row: 1; 
+    } */
   </style>
   <link rel="stylesheet" href="../style.css">
 </head>
@@ -35,14 +38,55 @@
 
   </nav>
 
-  <div class="container press">
-    <div class="container press-over-view">
-      <div class="press-overview"><div class="selected">press one</div></div>
-      <div class="press-overview" style="color: hotpink;">press two</div>
-      <div class="press-overview">press three</div>
+  <section class="container press">
+    <div class="container all-press-overview">
+      <div class="press-overview">
+        <div class="selected">
+          <div class="press-card">
+            <div class="header">
+              <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+            </div>
+            <div class="footer">
+              press one
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="press-overview" >
+        <div class="press-card">
+          <div class="header">
+            <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+          </div>
+          <div class="footer" style="color: hotpink;">
+            
+            press two
+          </div>
+        </div>
+      </div>
+      <div class="press-overview">
+        <div class="press-overview" >
+          <div class="press-card">
+            <div class="header">
+              <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+            </div>
+            <div class="footer">
+              press three
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container press-selected" >selected press</div>
-  </div>
+    <div class="container press-selected" >
+      <div class="press-card">
+        <div class="header">
+          <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+        </div>
+        <div class="footer">
+          selected press
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 </body>
 </html>
