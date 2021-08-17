@@ -21,7 +21,7 @@ nav{
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 5px;
-  /* flex-flow: row wrap; */
+  flex-flow: row wrap;
 }
 
 nav > div {
