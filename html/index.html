@@ -25,69 +25,107 @@
       grid-row: 1; 
     } */
   </style>
+  <script>
+   console.log("in the head")
+   console.log(document.querySelectorAll('.menu-option'))
+   let bottomSubmited = (_target) => {
+    document.querySelector('#pets').checked
+    console.log(document.querySelector('form').querySelector('input[type=checkbox]'))
+    console.log(document.querySelector('#name').value)
+    console.log(document.querySelector('#left-number').value)
+    console.log(document.querySelector('#right-number').value)
+    let left  = document.querySelector('#left-number').value
+    let right = document.querySelector('#right-number').value
+    let result = left + right
+    document.getElementsByClassName('result')[0].innerText = result
+   }
+   document.addEventListener('DOMContentLoaded',(target) => {
+      console.log('inside the loaded dom')
+      console.log(target)
+      console.log(document.querySelectorAll('.menu-option'))
+      document.getElementById('submit').addEventListener('click', bottomSubmited)
+   })
+  </script>
+  <script src="./script.js"></script>
   <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
+  <script>
+    console.log("in top of the body")
+    console.log(document.querySelectorAll('.menu-option'))
+  </script>
+  <div id="web-app">
+    <nav>
+      <div id="one" class="menu-option" data-selected="true">about</div>
+      <div class="menu-option">stats</div>
+      <div class="menu-option">games</div>
+      <!-- <div class="menu-option">four</div> -->
 
-<div id="web-app">
-  <nav>
-    <div id="one" class="menu-option" data-selected="true">about</div>
-    <div class="menu-option">stats</div>
-    <div class="menu-option">games</div>
-    <!-- <div class="menu-option">four</div> -->
+    </nav>
 
-  </nav>
-
-  <section class="container press">
-    <div class="container all-press-overview">
-      <div class="press-overview">
-        <div class="selected">
-          <div class="press-card">
-            <div class="header">
-              <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
-            </div>
-            <div class="footer">
-              press one
+    <section class="container press">
+      <div class="container all-press-overview">
+        <div class="press-overview">
+          <div class="selected">
+            <div class="press-card">
+              <div class="header">
+                <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+              </div>
+              <div class="footer">
+                press one
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="press-overview" >
-        <div class="press-card">
-          <div class="header">
-            <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
-          </div>
-          <div class="footer" style="color: hotpink;">
-            
-            press two
-          </div>
-        </div>
-      </div>
-      <div class="press-overview">
         <div class="press-overview" >
           <div class="press-card">
             <div class="header">
               <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
             </div>
-            <div class="footer">
-              press three
+            <div class="footer" style="color: hotpink;">
+              
+              press two
+            </div>
+          </div>
+        </div>
+        <div class="press-overview">
+          <div class="press-overview" >
+            <div class="press-card">
+              <div class="header">
+                <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+              </div>
+              <div class="footer">
+                press three
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="container press-selected" >
-      <div class="press-card">
-        <div class="header">
-          <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
-        </div>
-        <div class="footer">
-          selected press
+      <div class="container press-selected" >
+        <div class="press-card">
+          <div class="header">
+            <img src="./basic_html_and_css/shiba_dogo.jpeg" alt="">
+          </div>
+          <div class="footer">
+            selected press
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</div>
-</body>
+    </section>
+  </div>
+  <form action="">
+    has pets:<input type="checkbox" name="pets" id="pets">
+    name: <input type="text" name="name" id="name">
+    left number: <input type="text" name="left-number" id="left-number">
+    right number: <input type="text" name="right-number" id="right-number">
+    <div class="result"></div>
+    <input type="button" value="submit" id="submit">
+  </form>
+  <script>
+    console.log("in the bottom of the body")
+    console.log(document.querySelectorAll('.menu-option'))
+  </script>
+  </body>
 </html>
 
