@@ -38,12 +38,56 @@
     let right = document.querySelector('#right-number').value
     let result = left + right
     document.getElementsByClassName('result')[0].innerText = result
+
    }
    document.addEventListener('DOMContentLoaded',(target) => {
       console.log('inside the loaded dom')
       console.log(target)
       console.log(document.querySelectorAll('.menu-option'))
       document.getElementById('submit').addEventListener('click', bottomSubmited)
+
+      let reCalculate = () => {
+        // get items, recalculate and display
+        let items = document.getElementsByClassName('item')
+        let total = 0
+        for (let i = 0; i < items.length; i++) {
+          let price = items[i].getElementsByClassName('price')[0].textContent
+          total += parseInt(price)
+        }
+        document.getElementsByClassName('total-price')[0].innerText = total
+      }     
+      
+      let deleteItem = (event) => {
+        // delete the current item
+        console.log(event)
+        let item = event.target.parentNode
+        item.remove()
+        reCalculate()
+      }
+
+      let addItemToCart = (itemName, itemPrice) => {
+        let templateCartItem = `
+          <div class="item">
+            <span class="name">${itemName}</span>
+            <span class="price">${itemPrice}</span>
+            <button>delete item</button>
+          </div>
+          `
+          let itemList = document.getElementsByClassName('item-list')[0]
+          itemList.insertAdjacentHTML('beforeend', templateCartItem)
+          let items = document.getElementsByClassName('item')
+          let lastItem = items[items.length - 1]
+          let lastItemButton = lastItem.getElementsByTagName('button')[0]
+          lastItemButton.addEventListener('click', deleteItem)
+          reCalculate()
+      }
+      let setItemToCart = (_event) => {
+        let itemName = document.getElementById('item-name-input').value
+        let itemPrice = document.getElementById('item-price-input').value
+        addItemToCart(itemName, itemPrice)
+      }
+      document.getElementsByClassName('add-item')[0].addEventListener('click', setItemToCart)
+
    })
   </script>
   <script src="./script.js"></script>
@@ -122,6 +166,16 @@
     <div class="result"></div>
     <input type="button" value="submit" id="submit">
   </form>
+  <div class="item-list">
+  </div>
+  <div class="inputs">
+    name:<input type="text" name="name" id="item-name-input">
+    price: <input type="text" name="price" id="item-price-input">
+    <button class="add-item">add item</button>
+  </div>
+  <div class="total-price">
+    0
+  </div>
   <script>
     console.log("in the bottom of the body")
     console.log(document.querySelectorAll('.menu-option'))
