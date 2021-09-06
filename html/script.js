@@ -153,8 +153,91 @@ arr.forEach((number) => {
 //   console.log(i); // logs 3, 5, 7
 // }
 
+// TODO http call to pokeapi 
+// sample with plain xml http request
+
+
+
+let pockeNames = ['ditto', 'pickachu', 'jigglypuff']
+
+
+let pokeCall = (pokeName) => {
+  return (pokemons) => {
+    let req = new XMLHttpRequest();
+    req.open('GET', 'https://pokeapi.co/api/v2/pokemon/' + pokeName, true);
+    req.onreadystatechange = (req) => {
+      // debugger
+      if (req.readyState == 4) {
+        if(req.status == 200){
+          pokemons.add(req.response)
+          return Promise.resolve(pokemons);
+        } else {
+          console.log(req.reject)
+          return Promise.reject(req.reject);
+        }
+      }
+    }
+    req.send(null);
+  }
+}
+// this is the same as below
+// let promise = new Promise((resolve, _reject) => {
+//   return resolve()
+// })
+
+/** 
+ * promise calls
+ * call 1(dito)
+ * []// argument
+ * [{dito}] // return value
+ * 
+ * call 2 pickachu
+ * [{dito}] // argument
+ * [{dito}, {pickachu}] // return value
+ * 
+ * call 3 jigglypuff
+ * [{dito}, {pickachu}] // argument 
+ * [{dito}, {pickachu}, {jigglypuff}] // return value
+ * 
+ * call 4
+ * console log of all pokemos because it's the last promise call
+ * 
+*/
+
+let pokemons = []
+let promise = Promise.resolve(pokemons)
+let reject = (error) => {
+  console.log(error)
+}
+for (let index = 0; index < pockeNames.length; index++) {
+  promise.then(pokeCall(pockeNames[index]))
+}
+
+promise.then((pokemons) => {
+  return console.log(pokemons)
+})
+
+promise.reject(reject)
 
 
 
 
+let greeter = (greetType) => {
+  return (name) => {
+    console.log(greetType() + name)
+  }
+}
+
+let greetHi = () => {
+  return "hi" 
+}
+
+let greetHola = () => {
+  return "hola"
+}
+
+let greet = greeter(greetHola)
+
+greet("juve")
+greet("angel")
 
