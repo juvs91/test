@@ -241,3 +241,31 @@ let greet = greeter(greetHola)
 greet("juve")
 greet("angel")
 
+console.log("hola")
+promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    //reject(new Error("trono"))
+    resolve({name: "juve"})
+  }, 2000)
+})
+promise.then((employeeJson) => {
+  console.log("in the first then")
+  console.log(employeeJson)
+  employeeJson.age = 30
+  return Promise.reject(new Error("trono en el then"))
+}).then((employeeJson) => {
+  console.log("in the second then")
+  console.log(employeeJson)
+}).catch((error) => {
+  console.log("in the catch")
+  console.log(error)
+})
+
+
+setTimeout(2000, () => {
+  console.log("in the time out")
+})
+console.log("hi")
+
+
+
